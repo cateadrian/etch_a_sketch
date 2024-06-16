@@ -19,4 +19,19 @@ function makeGrid(n){
 // Initializes a grid 16x16
 makeGrid(16);
 
+function removeGrid(){
+    let oldDivs = document.querySelectorAll(".div");
+
+    oldDivs.forEach((div) => {
+        div.remove();
+    });
+}
+
+let resetButton = document.querySelector("#resetButton");
+
+resetButton.addEventListener("click", function(){
+    let userInput = prompt("How many sqaures per side? ");
+    removeGrid();
+    makeGrid(userInput);
+});
 
